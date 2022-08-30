@@ -1,34 +1,29 @@
 <html>
   <head>
-    <title>Imersão Dev Alura - Aula 02</title>
+    <title>Imersão Dev Alura - Aula 03</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
-      <h1 class="page-title">
-        Conversor de moedas
-      </h1>
-      <p class="page-subtitle">
-        Descubra os valores em real U$
-      </p>
-      <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
-      <label for="moeda">Insira o valor</label><br>
-      <input type="number" id="valor" size="2" /><br>
-      <button type="submit" onclick="Converter()">Converter</button> 
-      <button type="submit" onclick="ConverterRealParaDolarCanadense()">Converter para Dolar Canadense</button><!-- desafio 1 -->
-      <button type="submit" onclick="ConverterKmParaAnosLuz()">Converter Km para anos Luz</button><!-- desafio 2 -->
-      <h2 id="valorConvertido"></h2>
-      <h2 id="valorBitcoin"></h2><!-- desafio 4 -->
-
-      <label>Insira o valor de temperatura</label><br><!-- desafio 5 -->
-      <input type="number" id="valorTemperatura" size="2" /><br><!-- desafio 5 -->
-  
-      <button type="submit" onclick="ConverterCelsiusParaFahrenheitEKelvin()">Converter Celsius para Fahrenheit e Kelvin</button><!-- desafio 5 -->
-      <h2 id="valorFahrenheit"></h2><!-- desafio 5 -->
-      <h2 id="valorKelvin"></h2><!-- desafio 5 -->
+      <h1 class="page-title">Mentalista</h1>
+      <img
+        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg"
+        class="page-logo"
+        alt=""
+      /><br />
+      <p class="page-subtitle">Digite um número de 0 a 10</p>
+      <input type="number" id="valor" /><br />
+      <button type="submit" onclick="Chutar()">Chutar</button>
+      <h2 class="resultado" id="resultado"></h2>
     </div>
     <a href="https://alura.com.br/" target="_blank">
-      <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-    <script src="index.js"></script>
+      <img
+        src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
+        alt=""
+        class="alura-logo"
+      />
+    </a>
+    <script src="app.js"></script>
   </body>
 </html>
