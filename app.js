@@ -1,22 +1,12 @@
-//Assuntos da aula
-var listaFilmes = ["Yesterday", "A chegada", "Escola de Rock"];
-//elemento              1         2            3
-//indice                0         1            2
+//Assuntos da aula a partir 50min46s
+var listaFilmes = [
+  "https://upload.wikimedia.org/wikipedia/pt/7/79/Yesterday_%282019%29_poster.jpg?20190702191337",
+  "https://1.bp.blogspot.com/-ImZPRqLsluE/WFK156_6pNI/AAAAAAAAYBY/0lEhNRF5wfQdLfr6hpT57_Jt2eBrE9H5wCLcB/s1600/arrival-kartoun-desert.jpg",
+  "https://upload.wikimedia.org/wikipedia/pt/thumb/1/1b/Schoolrockposter.jpg/210px-Schoolrockposter.jpg",
+];
 
-listaFilmes.push("Harry Potter 2");
-listaFilmes.push("Harry Potter 3");
-listaFilmes.push("Harry Potter 4");
-listaFilmes.push("Harry Potter 5");
-
-// document.write("<p>" + listaFilmes[0] + "</p>");
-// document.write("<p>" + listaFilmes[1] + "</p>");
-// document.write("<p>" + listaFilmes[2] + "</p>");
-// document.write("<p>" + listaFilmes[3] + "</p>");
-
-//   valor inicial         condicao expressao      final
-for (var indice = 0; indice < listaFilmes.length; indice++) {
-  document.write("<p>" + listaFilmes[indice] + "</p>");
+for (let i = 0; i < listaFilmes.length; i++) {
+  document.write("<img src=" + listaFilmes[i] + ">");
 }
-//Até 50min46s
 
 // -------------------------- DESAFIOS -----------------------------
