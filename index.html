@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Imersão Dev - Aula 04</title>
+    <title>Imersão Dev - Aula 05</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -12,7 +12,18 @@
         class="page-logo"
         alt=""
       />
+      <p class="page-subtitle">Qual seu filme favorito?</p>
+      <div class="form-wrapper">
+        <input
+          type="text"
+          id="filme"
+          name="filme"
+          placeholder="Insira endereço de imagem"
+        />
+        <button onClick="adicionarFilme()">Adicionar Filme</button>
+      </div>
     </div>
+    <div id="listaFilmes"></div>
     <a href="https://alura.com.br/" target="_blank">
       <img
         src="https://www.alura.com.br/assets/img/home/alura-logo.svg"
@@ -20,11 +31,6 @@
         class="alura-logo"
       />
     </a>
-    <label for="adiciona-filme-input">Cole o link de um filme aqui
-      <input id="adiciona-filme-input"></input>
-    </label>
-    <button id="adiciona-filme-button" onclick=adicionaFilme()>Adicione um filme</button>
-    <div id="filmes-container"></div>
-    <script src="/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
