@@ -1,16 +1,21 @@
+* {
+  text-align: center;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
-  text-align: center;
-  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
-  background-color: #000000;
-  background-size: cover;
-  background-position: center top;
+  min-height: 400px;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
+  background-color: #111;
+  background-size: 100%;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .container {
   text-align: center;
   padding: 20px;
+  height: 100vh;
 }
 
 .page-title {
@@ -34,34 +39,18 @@ body {
   right: 10px;
 }
 
-#listaFilmes img {
-  margin: 10px;
-  max-height: 250px;
+table {
+  border: 2px solid white;
+  border-collapse: collapse;
 }
 
-.form-wrapper {
-  margin: 0 0 15px;
+h1 {
+  color: white;
 }
 
-.form-wrapper input {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 15px;
-}
-
-.form-wrapper button {
-  border: 0;
-  color: #ffffff;
-  background: #da1e26;
-  font-weight: bold;
-  padding: 15px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.form-wrapper button:hover {
-  opacity: 0.8;
+th,
+tr,
+td {
+  border: solid 1px white;
+  color: white;
 }
