@@ -65,3 +65,11 @@ body {
 .form-wrapper button:hover {
   opacity: 0.8;
 }
+
+#listaFilmes {
+  /* Desafio 2 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
