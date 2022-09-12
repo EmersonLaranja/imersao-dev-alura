@@ -1,74 +1,91 @@
 //Assuntos da aula
-var rafa = {
-  nome: "Rafa",
-  vitorias: 2,
-  empates: 1,
-  derrotas: 1,
-  pontos: 0,
+
+var carta1 = {
+  nome: "Bulbassauro",
+  atributos: {
+    ataque: 7,
+    defesa: 8,
+    magia: 6,
+  },
 };
-var paulo = {
-  nome: "Paulo",
-  vitorias: 1,
-  empates: 1,
-  derrotas: 2,
-  pontos: 0,
+var carta2 = {
+  nome: "Darth Vader",
+  atributos: {
+    ataque: 9,
+    defesa: 8,
+    magia: 2,
+  },
+};
+var carta3 = {
+  nome: "Shiryu de dragão",
+  atributos: {
+    ataque: 5,
+    defesa: 9,
+    magia: 10,
+  },
 };
 
-function calculaPontos(jogador) {
-  var pontos = jogador.vitorias * 3 + jogador.empates;
-  return pontos;
-}
+var cartas = [carta1, carta2, carta3];
 
-rafa.pontos = calculaPontos(rafa);
-paulo.pontos = calculaPontos(paulo);
+var cartaMaquina;
+var cartaJogador;
 
-var jogadores = [rafa, paulo];
+function sortearCarta() {
+  var numeroCartaMaquina = parseInt(Math.random() * cartas.length);
+  cartaMaquina = cartas[numeroCartaMaquina];
 
-function exibeJogadoresNaTela(jogadores) {
-  var elemento = "";
+  var numeroCartaJogador = parseInt(Math.random() * cartas.length);
 
-  for (let i = 0; i < jogadores.length; i++) {
-    elemento += "<tr><td>" + jogadores[i].nome + "</td>";
-    elemento += "<td>" + jogadores[i].vitorias + "</td>";
-    elemento += "<td>" + jogadores[i].empates + "</td>";
-    elemento += "<td>" + jogadores[i].derrotas + "</td>";
-    elemento += "<td>" + jogadores[i].pontos + "</td>";
-    elemento +=
-      "<td><button onClick='adicionarVitoria(" + i + ")'>Vitória</button></td>";
-    elemento +=
-      "<td><button onClick='adicionarEmpate(" + i + ")'>Empate</button></td>";
-    elemento +=
-      "<td><button onClick='adicionarDerrota(" + i + ")'>Derrota</button></td>";
-    elemento += " </tr>";
+  while (numeroCartaJogador == numeroCartaMaquina) {
+    numeroCartaJogador = parseInt(Math.random() * cartas.length);
   }
 
-  var tabelaJogadores = document.getElementById("tabelaJogadores");
-  tabelaJogadores.innerHTML = elemento;
+  cartaJogador = cartas[numeroCartaJogador];
+  console.log(cartaJogador);
+
+  document.getElementById("btnSortear").disabled = true;
+  document.getElementById("btnJogar").disabled = false;
+
+  exibirOpcoes();
 }
 
-exibeJogadoresNaTela(jogadores);
+function exibirOpcoes() {
+  var opcoes = document.getElementById("opcoes");
+  var opcoesTexto = "";
+  for (var atributo in cartaJogador.atributos) {
+    opcoesTexto +=
+      "<input type='radio' name='atributo' value='" +
+      atributo +
+      "'>" +
+      atributo;
+  }
+  opcoes.innerHTML = opcoesTexto;
+}
 
-function adicionarVitoria(i) {
-  var jogador = jogadores[i];
-  jogador.vitorias++;
-  jogador.pontos = calculaPontos(jogador);
-  exibeJogadoresNaTela(jogadores);
+function obtemAtributoSelecionado() {
+  var radioAtributos = document.getElementsByName("atributo");
+  for (var i = 0; i < radioAtributos.length; i++) {
+    if (radioAtributos[i].checked == true) {
+      return radioAtributos[i].value;
+    }
+  }
 }
-function adicionarEmpate(i) {
-  var jogador = jogadores[i];
-  jogador.empates++;
-  jogador.pontos = calculaPontos(jogador);
-  exibeJogadoresNaTela(jogadores);
-}
-function adicionarDerrota(i) {
-  var jogador = jogadores[i];
-  jogador.derrotas++;
-  exibeJogadoresNaTela(jogadores);
+function jogar() {
+  var atributoSelecionado = obtemAtributoSelecionado();
+  var elementoResultado = document.getElementById("resultado");
+  var valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
+  var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
+
+  if (valorCartaJogador > valorCartaMaquina) {
+    elementoResultado.innerHTML = "Você venceu!";
+  } else if (valorCartaMaquina > valorCartaJogador) {
+    elementoResultado.innerHTML = "Você perdeu! A carta da máquina é maior";
+  } else {
+    elementoResultado.innerHTML = "Empatou!";
+  }
+  console.log(cartaMaquina);
 }
 
 // -------------------------- DESAFIOS -----------------------------
-// 1) Ao ter uma derrota, outros terem vitória (mesma ideia se tem empate)
-// 2) Pensar em validações (talvez criar uma coluna nova pra falar se é válido, colocar trofeu para quem tem mais pontos)
-// 3) Imagem do jogador
-// 4) Botão para zerar tudo
-// 5) Botão para adicionar novo jogador
+// 1) Jogar sem selecionar atributo (tratativa)
+// 2) imagem do personagem

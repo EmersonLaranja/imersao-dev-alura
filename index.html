@@ -1,46 +1,29 @@
 <html>
   <head>
-    <title>Imersão Dev - Aula 06</title>
+    <title>Imersão Dev - Aula 07</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <h1>Tabela de classificação</h1>
+    <div class="container">
+      <img
+        src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png"
+        class="page-logo"
+        alt=""
+      />
+      <h1 class="page-title">Super Trunfo</h1>
 
-    <table style="width: 100%">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Vitórias</th>
-          <th>Empates</th>
-          <th>Derrotas</th>
-          <th>Pontos</th>
-          <th colspan="3">Ações</th>
-        </tr>
-      </thead>
-      <tbody id="tabelaJogadores">
-        <!-- <tr>
-          <td>Paulo</td>
-          <td>2</td>
-          <td>5</td>
-          <td>1</td>
-          <td>24</td>
-          <td><button onClick="adicionarVitoria()">Vitória</button></td>
-          <td><button onClick="adicionarEmpate()">Empate</button></td>
-          <td><button onClick="adicionarDerrota()">Derrota</button></td>
-        </tr>
-        <tr>
-          <td>Rafa</td>
-          <td>3</td>
-          <td>5</td>
-          <td>6</td>
-          <td>2</td>
-          <td><button onClick="adicionarVitoria()">Vitória</button></td>
-          <td><button onClick="adicionarEmpate()">Empate</button></td>
-          <td><button onClick="adicionarDerrota()">Derrota</button></td>
-        </tr> -->
-      </tbody>
-    </table>
+      <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+
+      <form id="form">
+        <h2>Escolha o seu atributo</h2>
+        <div class="opcoes" id="opcoes"></div>
+        <button type="button" id="btnJogar" onclick="jogar()" disabled="false">
+          Jogar
+        </button>
+        <div id="resultado"></div>
+      </form>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
